@@ -118,12 +118,12 @@ class DjangoGCloudStorage(Storage):
 
         if credentials_file_path is not None:
             self.credentials_file_path = credentials_file_path
-        else if os.path.exists(settings.GCS_CREDENTIALS_FILE_PATH):
+        elif os.path.exists(settings.GCS_CREDENTIALS_FILE_PATH):
             self.credentials_file_path = settings.GCS_CREDENTIALS_FILE_PATH
 
         if project is not None:
             self.project_name = project
-        else if settings.GCS_PROJECT:
+        elif settings.GCS_PROJECT:
             self.project_name = settings.GCS_PROJECT
 
         self.bucket_subdir = ''  # TODO should be a parameter
